@@ -3,7 +3,7 @@
     <!-- Form -->
     <q-form class="q-mt-lg">
       <input v-model="newTask" />
-      <button @click="addTask" id="save">Agregar</button>
+      <button @click="addTask" id="save" class="q-ml-md">Agregar</button>
     </q-form>
 
     <br />
@@ -14,7 +14,7 @@
       <li v-for="(el, index) in elements" :key="el" :id="index">
         {{ el }}
         <q-btn
-          class="q-ml-sm text-grey-5"
+          class="q-ml-lg text-grey-5"
           icon="delete"
           @click.prevent="deleteTask(index)"
           dense
