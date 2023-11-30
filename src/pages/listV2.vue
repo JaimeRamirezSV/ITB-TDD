@@ -1,6 +1,7 @@
 <template>
   <q-page class="row justify-center">
-    <q-form class="">
+    <!-- Form -->
+    <q-form class="q-mt-lg">
       <input v-model="newTask" />
       <button @click="addTask" id="save">Agregar</button>
     </q-form>
@@ -9,10 +10,17 @@
     <br />
 
     <!-- Lista -->
-    <ul class="bg-red">
+    <ul>
       <li v-for="(el, index) in elements" :key="el" :id="index">
         {{ el }}
-        <q-btn label="Eliminar" @click.prevent="deleteTask(index)" />
+        <q-btn
+          class="q-ml-sm text-grey-5"
+          icon="delete"
+          @click.prevent="deleteTask(index)"
+          dense
+          flat
+          outline
+        />
       </li>
     </ul>
   </q-page>
